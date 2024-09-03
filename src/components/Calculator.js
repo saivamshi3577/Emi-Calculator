@@ -16,7 +16,7 @@ const Calculator = () => {
 
     const emi = ((p + fee) * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
     setEmi(emi.toFixed(2));
-
+  
     const newHistory = {
       principal: p,
       rate: annualRate,
@@ -24,7 +24,7 @@ const Calculator = () => {
       fee: processingFee,
       emi: emi.toFixed(2),
     };
-    setHistory([...history, newHistory]);
+    setHistory([newHistory, ...history]);
   };
 
   const clearHistory = () => {
